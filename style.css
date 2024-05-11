@@ -33,8 +33,8 @@ img {
   }
 }
 .atf .card {
-  max-width: 400px;
-  max-height: 600px;
+  max-width: 200px;
+  max-height: 300px;
   width: 80vw;
   height: 120vw;
   transform-style: preserve-3d;
