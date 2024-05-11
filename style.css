@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */ /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+   supported by Chrome, Edge, Opera and Firefox */
+}
+
+.atf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.atf .card-cont {
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 1400px;
+  transition: all 0.2s ease;
+}
+@media (min-width: 768px) {
+  .open .atf .card-cont {
+    transform: translate(0%, -50%);
+  }
+}
+.atf .card {
+  max-width: 400px;
+  max-height: 600px;
+  width: 80vw;
+  height: 120vw;
+  transform-style: preserve-3d;
+  transform: rotateX(19deg) rotateY(13deg) rotateZ(-3deg);
+  transition: all 1s ease;
+}
+.open .atf .card {
+  transform: rotateX(0deg);
+}
+.atf .card__panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  transition: all 1s ease;
+  backface-visibility: visible;
+  transform-origin: left;
+  transform-style: preserve-3D;
+  transform: rotate3d(0, 1, 0, 0deg);
+}
+.atf .card__panel--front {
+  backface-visibility: hidden;
+  background: #0C313D;
+  z-index: 1;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.open .atf .card__panel--front {
+  transform: rotate3d(0, 1, 0, -170deg);
+}
+.atf .card__panel--inside-left {
+  background: #0C313D;
+  z-index: 0;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.open .atf .card__panel--inside-left {
+  transform: rotate3d(0, 1, 0, -170deg);
+}
+.atf .card__panel--inside-right {
+  background: #0C313D;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+.atf .card .elf {
+  position: absolute;
+}
+.atf .card .elf-left {
+  bottom: -5px;
+  left: 0;
+  width: 113.5px;
+  z-index: 1;
+}
+.atf .card .elf-right {
+  bottom: -6px;
+  left: 0;
+  width: 112px;
+}
+.atf .card .reverse-me {
+  transform: scaleX(-1);
+}
+.atf .card .shadow-me {
+  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.5);
+}
+
+.btf {
+  padding-left: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.btf h1 {
+  margin-bottom: 1rem;
+}
+.btf img {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 1rem;
+}
+.btf p {
+  margin-bottom: 3rem;
+}/*# sourceMappingURL=style.css.map */
